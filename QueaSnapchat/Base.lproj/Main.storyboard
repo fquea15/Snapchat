@@ -64,6 +64,17 @@
                                     <action selector="IniciarSesionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aIn-ih-m9o"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFl-oI-1pz">
+                                <rect key="frame" x="107" y="515" width="200" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="VmJ-27-VxR"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="7611770-2" title="Ingresar con google"/>
+                                <connections>
+                                    <action selector="InciarSesionGoogleTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rbe-Wu-gMl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -74,6 +85,8 @@
                             <constraint firstItem="b9G-eg-XcW" firstAttribute="top" secondItem="F3y-TL-SKC" secondAttribute="bottom" constant="30" id="HW3-ly-J3C"/>
                             <constraint firstItem="i5n-Vw-Uyf" firstAttribute="top" secondItem="EwP-LN-rF0" secondAttribute="bottom" constant="25" id="JBO-eY-7VV"/>
                             <constraint firstItem="F3y-TL-SKC" firstAttribute="top" secondItem="Uwm-DF-SX3" secondAttribute="bottom" constant="25" id="Ma3-Dr-kkG"/>
+                            <constraint firstItem="jFl-oI-1pz" firstAttribute="centerX" secondItem="b9G-eg-XcW" secondAttribute="centerX" id="Qyk-6l-wtv"/>
+                            <constraint firstItem="jFl-oI-1pz" firstAttribute="top" secondItem="b9G-eg-XcW" secondAttribute="bottom" constant="20" id="R6c-Lh-eNK"/>
                             <constraint firstItem="I2j-PP-6Ig" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="TuG-nh-bAS"/>
                             <constraint firstItem="F3y-TL-SKC" firstAttribute="centerX" secondItem="Uwm-DF-SX3" secondAttribute="centerX" id="UoN-VC-hg4"/>
                             <constraint firstItem="EwP-LN-rF0" firstAttribute="top" secondItem="I2j-PP-6Ig" secondAttribute="bottom" constant="25" id="Vtd-ms-tzt"/>
@@ -93,6 +106,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="7611770-2" width="40" height="40"/>
         <image name="User" width="840" height="812"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
