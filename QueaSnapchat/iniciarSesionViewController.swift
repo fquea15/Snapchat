@@ -12,7 +12,7 @@ import Firebase
 
 
 
-class iniciarSesionViewController: UIViewController, GIDSignIn{
+class iniciarSesionViewController: UIViewController{
 
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -28,48 +28,45 @@ class iniciarSesionViewController: UIViewController, GIDSignIn{
             (user, error) in
             print("Intentando Iniciar Sesion")
             if error != nil {
+                print("**************************")
                 print("Se presento el siguiente error: \(error)")
+                print("**************************")
             }else{
+                print("**************************")
                 print("Inicio de sesion exitoso")
+                print("*************************")
             }
         }
     }
     @IBAction func InciarSesionGoogleTapped(_ sender: Any) {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+       let config = GIDConfiguration(clientID: clientID)
+       GIDSignIn.sharedInstance.configuration = config
+       GIDSignIn.sharedInstance.signIn(withPresenting: self) { [unowned self] result, error in
+         guard error == nil else {
+             return
+         }
 
-        // Crea el objeto de configuración de inicio de sesión de Google.
-        let config = GIDConfiguration(clientID: clientID)
-        GIDSignIn.sharedInstance.configuration = config
-
-        // Inicia el flujo de inicio de sesión de Google.
-            GIDSignIn.sharedInstance().signIn(withPresenting: self) { [unowned self] (result: GIDGoogleUser?, error: Error?) in
-                guard let result = result else {
-                    
-                    return
-                }
-
-            guard let user = result?.user,
-                let idToken = user.authentication.idToken
-            else {
-                // Maneja el caso donde no se obtuvo el usuario o el token de ID.
-                print("No se pudo obtener el usuario o el token de ID.")
-                return
-            }
-
-            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
-                                                           accessToken: user.authentication.accessToken)
-
-            Auth.auth().signIn(with: credential) { authResult, error in
-                if let error = error {
-                    // Maneja el error al autenticar con Firebase.
-                    print("Error al autenticar con Firebase: \(error.localizedDescription)")
-                    return
-                }
-
-                // Si no hay errores, el inicio de sesión con Google fue exitoso.
-                print("Inicio de sesión con Google exitoso!")
-            }
-        }
+         guard let user = result?.user,
+           let idToken = user.idToken?.tokenString
+         else {
+             return
+         }
+         let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                        accessToken: user.accessToken.tokenString)
+       Auth.auth().signIn(with: credential) { result, error in
+           if let error = error {
+               print("************************************")
+               print("Error al iniciar sesión con Google: \(error.localizedDescription)")
+               print("************************************")
+           } else {
+               print("************************************")
+               print("Inicio de sesión exitoso con Google")
+               print("************************************")
+           }
+       }
+           
+       }
     }
     
 }

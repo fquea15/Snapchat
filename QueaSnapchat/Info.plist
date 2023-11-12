@@ -4,15 +4,17 @@
 <dict>
 	<key>GIDClientID</key>
 	<string>388434400214-hvf31kogptbaii90d3j6fhln89e04cbt.apps.googleusercontent.com</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>com.googleusercontent.apps.388434400214-hvf31kogptbaii90d3j6fhln89e04cbt</string>
-			</array>
-		</dict>
-	</array>
+    <key>CFBundleURLTypes</key>
+        <array>
+            <dict>
+                <key>CFBundleTypeRole</key>
+                <string>Editor</string>
+                <key>CFBundleURLSchemes</key>
+                <array>
+                    <string>com.googleusercontent.apps.388434400214-hvf31kogptbaii90d3j6fhln89e04cbt</string>
+                </array>
+            </dict>
+        </array>
 	<key>CFBundleIdentifier</key>
 	<string></string>
 	<key>CFBundleExecutable</key>
