@@ -121,12 +121,113 @@
                                 <action selector="CerrarSesionTapped:" destination="t0g-Jo-obW" id="nsc-7p-NhV"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0uJ-2s-1Ok">
+                            <connections>
+                                <segue destination="aMU-gB-Vcv" kind="show" id="v3F-cj-ltV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Em0-H3-gj5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1760.8695652173915" y="81.696428571428569"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="toP-V7-Qmo">
+            <objects>
+                <viewController id="aMU-gB-Vcv" customClass="ImagenViewController" customModule="QueaSnapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7GC-in-C8G">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W9p-0t-xa1">
+                                <rect key="frame" x="87" y="108" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="gwD-AJ-SdJ"/>
+                                    <constraint firstAttribute="width" constant="240" id="kbr-im-8lB"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descripción…" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="slc-oJ-hlG">
+                                <rect key="frame" x="87" y="251" width="240" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzZ-Pg-JTB">
+                                <rect key="frame" x="87" y="305" width="240" height="35.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="systemGroupedBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Elegir Contacto">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="elegirContactoTapped:" destination="aMU-gB-Vcv" eventType="touchUpInside" id="iyA-Sg-ez9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="B11-pP-8ow"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="W9p-0t-xa1" firstAttribute="centerX" secondItem="slc-oJ-hlG" secondAttribute="centerX" id="8oW-sO-DAc"/>
+                            <constraint firstItem="W9p-0t-xa1" firstAttribute="width" secondItem="slc-oJ-hlG" secondAttribute="width" id="EUJ-0y-meu"/>
+                            <constraint firstItem="W9p-0t-xa1" firstAttribute="top" secondItem="B11-pP-8ow" secondAttribute="top" constant="20" id="Pdb-U7-olo"/>
+                            <constraint firstItem="slc-oJ-hlG" firstAttribute="top" secondItem="W9p-0t-xa1" secondAttribute="bottom" constant="15" id="a7a-hq-Z7B"/>
+                            <constraint firstItem="CzZ-Pg-JTB" firstAttribute="top" secondItem="slc-oJ-hlG" secondAttribute="bottom" constant="20" id="bvz-Kb-Ph7"/>
+                            <constraint firstItem="slc-oJ-hlG" firstAttribute="width" secondItem="CzZ-Pg-JTB" secondAttribute="width" id="lS3-bi-fjO"/>
+                            <constraint firstItem="W9p-0t-xa1" firstAttribute="centerX" secondItem="B11-pP-8ow" secondAttribute="centerX" id="nze-sF-ExB"/>
+                            <constraint firstItem="slc-oJ-hlG" firstAttribute="centerX" secondItem="CzZ-Pg-JTB" secondAttribute="centerX" id="oit-fS-Tch"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="37n-bi-4kM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="I8l-DH-Nnn">
+                            <connections>
+                                <action selector="camaraTapped:" destination="aMU-gB-Vcv" id="WL8-fl-GKc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descripcionTextField" destination="slc-oJ-hlG" id="snn-Dp-ny6"/>
+                        <outlet property="elegirContactoBoton" destination="CzZ-Pg-JTB" id="TSo-Ql-jZv"/>
+                        <outlet property="imageView" destination="W9p-0t-xa1" id="om6-PH-5ha"/>
+                        <segue destination="SuT-cz-I1z" kind="show" identifier="seleccionarContactoSegue" id="lK8-Ew-xpR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xx4-qP-TI0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2592.753623188406" y="94.419642857142847"/>
+        </scene>
+        <!--Elegir Usuario View Controller-->
+        <scene sceneID="mae-Qr-WTs">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="SuT-cz-I1z" customClass="ElegirUsuarioViewController" customModule="QueaSnapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a1w-hx-Dkm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4lw-7Z-fEJ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lyA-bA-XR3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lyA-bA-XR3" firstAttribute="bottom" secondItem="4lw-7Z-fEJ" secondAttribute="bottom" id="ALr-LS-3qX"/>
+                            <constraint firstItem="4lw-7Z-fEJ" firstAttribute="top" secondItem="lyA-bA-XR3" secondAttribute="top" id="as9-G7-eUw"/>
+                            <constraint firstItem="lyA-bA-XR3" firstAttribute="trailing" secondItem="4lw-7Z-fEJ" secondAttribute="trailing" id="ghi-9b-Zpi"/>
+                            <constraint firstItem="4lw-7Z-fEJ" firstAttribute="leading" secondItem="lyA-bA-XR3" secondAttribute="leading" id="v9A-nY-J6a"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HRD-a0-niC"/>
+                    <connections>
+                        <outlet property="listaUsuarios" destination="4lw-7Z-fEJ" id="009-es-ayU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M05-3T-XhU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3323" y="101"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vCM-PJ-gKf">
@@ -154,8 +255,14 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
