@@ -98,11 +98,54 @@
                     <connections>
                         <outlet property="emailTextField" destination="i5n-Vw-Uyf" id="poq-Ha-UG0"/>
                         <outlet property="passwordTextField" destination="F3y-TL-SKC" id="6St-LR-jls"/>
+                        <segue destination="cnz-uG-kWy" kind="presentation" identifier="iniciarsesionsegue" id="v2g-ey-6q9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="30" y="70"/>
+        </scene>
+        <!--Snaps View Controller-->
+        <scene sceneID="ncy-A8-fpH">
+            <objects>
+                <viewController id="t0g-Jo-obW" customClass="SnapsViewController" customModule="QueaSnapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UnN-W6-Swe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="MR8-rc-fJq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tmy-bc-MW5">
+                        <barButtonItem key="leftBarButtonItem" title="Cerrar Sesion" id="QF7-Ra-S59">
+                            <connections>
+                                <action selector="CerrarSesionTapped:" destination="t0g-Jo-obW" id="nsc-7p-NhV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Em0-H3-gj5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1760.8695652173915" y="81.696428571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vCM-PJ-gKf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cnz-uG-kWy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bh2-Ow-Xv4">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="t0g-Jo-obW" kind="relationship" relationship="rootViewController" id="XVC-nO-MAD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WX9-wh-lLn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850.72463768115949" y="81.696428571428569"/>
         </scene>
     </scenes>
     <resources>

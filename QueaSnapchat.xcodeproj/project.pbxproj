@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5575D9E32B03B50800AF5E45 /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5575D9E22B03B50800AF5E45 /* SnapsViewController.swift */; };
 		55794FC12AFA79AD0035AE63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55794FC02AFA79AD0035AE63 /* AppDelegate.swift */; };
 		55794FC32AFA79AD0035AE63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55794FC22AFA79AD0035AE63 /* SceneDelegate.swift */; };
 		55794FC52AFA79AD0035AE63 /* iniciarSesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55794FC42AFA79AD0035AE63 /* iniciarSesionViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5575D9E22B03B50800AF5E45 /* SnapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
 		55794FBD2AFA79AD0035AE63 /* QueaSnapchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QueaSnapchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55794FC02AFA79AD0035AE63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55794FC22AFA79AD0035AE63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				55794FC22AFA79AD0035AE63 /* SceneDelegate.swift */,
 				55794FC42AFA79AD0035AE63 /* iniciarSesionViewController.swift */,
 				55794FC62AFA79AD0035AE63 /* Main.storyboard */,
+				5575D9E22B03B50800AF5E45 /* SnapsViewController.swift */,
 				55794FC92AFA79B20035AE63 /* Assets.xcassets */,
 				55794FCB2AFA79B20035AE63 /* LaunchScreen.storyboard */,
 				55794FCE2AFA79B20035AE63 /* Info.plist */,
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5575D9E32B03B50800AF5E45 /* SnapsViewController.swift in Sources */,
 				55794FC52AFA79AD0035AE63 /* iniciarSesionViewController.swift in Sources */,
 				55794FC12AFA79AD0035AE63 /* AppDelegate.swift in Sources */,
 				55794FC32AFA79AD0035AE63 /* SceneDelegate.swift in Sources */,
