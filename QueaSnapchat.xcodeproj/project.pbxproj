@@ -22,6 +22,8 @@
 		55794FD82AFA7DAD0035AE63 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 55794FD72AFA7DAD0035AE63 /* FirebaseAnalytics */; };
 		55794FDA2AFA7DAD0035AE63 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 55794FD92AFA7DAD0035AE63 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		55794FDC2AFA7DAD0035AE63 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 55794FDB2AFA7DAD0035AE63 /* FirebaseAuth */; };
+		558998F72B0AE75300BE80E3 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558998F62B0AE75300BE80E3 /* Usuario.swift */; };
+		558998F92B0AFFA300BE80E3 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558998F82B0AFFA300BE80E3 /* RegistroViewController.swift */; };
 		559829352AFAE7A10068D53D /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 559829342AFAE7A10068D53D /* GoogleSignIn */; };
 		559829372AFAE7A10068D53D /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 559829362AFAE7A10068D53D /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
@@ -39,6 +41,8 @@
 		55794FC92AFA79B20035AE63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55794FCC2AFA79B20035AE63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55794FCE2AFA79B20035AE63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		558998F62B0AE75300BE80E3 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		558998F82B0AFFA300BE80E3 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,19 +90,37 @@
 		55794FBF2AFA79AD0035AE63 /* QueaSnapchat */ = {
 			isa = PBXGroup;
 			children = (
+				558998F52B0AE72400BE80E3 /* Modelos */,
+				558998F42B0AE6C400BE80E3 /* ViewControllers */,
 				55794FC02AFA79AD0035AE63 /* AppDelegate.swift */,
 				55794FC22AFA79AD0035AE63 /* SceneDelegate.swift */,
-				55794FC42AFA79AD0035AE63 /* iniciarSesionViewController.swift */,
 				55794FC62AFA79AD0035AE63 /* Main.storyboard */,
-				551AE6EB2B04347100E87F17 /* ElegirUsuarioViewController.swift */,
-				5574B7422B041E1D00DA17B9 /* ImagenViewController.swift */,
-				5575D9E22B03B50800AF5E45 /* SnapsViewController.swift */,
 				55794FC92AFA79B20035AE63 /* Assets.xcassets */,
 				55794FCB2AFA79B20035AE63 /* LaunchScreen.storyboard */,
 				55794FCE2AFA79B20035AE63 /* Info.plist */,
 				5574B7402B04161D00DA17B9 /* GoogleService-Info.plist */,
 			);
 			path = QueaSnapchat;
+			sourceTree = "<group>";
+		};
+		558998F42B0AE6C400BE80E3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5575D9E22B03B50800AF5E45 /* SnapsViewController.swift */,
+				55794FC42AFA79AD0035AE63 /* iniciarSesionViewController.swift */,
+				5574B7422B041E1D00DA17B9 /* ImagenViewController.swift */,
+				551AE6EB2B04347100E87F17 /* ElegirUsuarioViewController.swift */,
+				558998F82B0AFFA300BE80E3 /* RegistroViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		558998F52B0AE72400BE80E3 /* Modelos */ = {
+			isa = PBXGroup;
+			children = (
+				558998F62B0AE75300BE80E3 /* Usuario.swift */,
+			);
+			path = Modelos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,8 +210,10 @@
 			files = (
 				5575D9E32B03B50800AF5E45 /* SnapsViewController.swift in Sources */,
 				5574B7432B041E1D00DA17B9 /* ImagenViewController.swift in Sources */,
+				558998F72B0AE75300BE80E3 /* Usuario.swift in Sources */,
 				55794FC52AFA79AD0035AE63 /* iniciarSesionViewController.swift in Sources */,
 				55794FC12AFA79AD0035AE63 /* AppDelegate.swift in Sources */,
+				558998F92B0AFFA300BE80E3 /* RegistroViewController.swift in Sources */,
 				55794FC32AFA79AD0035AE63 /* SceneDelegate.swift in Sources */,
 				551AE6EC2B04347100E87F17 /* ElegirUsuarioViewController.swift in Sources */,
 			);

@@ -9,6 +9,7 @@ import UIKit
 import FirebaseAuth
 import GoogleSignIn
 import Firebase
+import FirebaseDatabase
 
 
 
@@ -20,35 +21,34 @@ class iniciarSesionViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func IniciarSesionTapped(_ sender: Any) {
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!){
             (user, error) in
-            print("Intentando Iniciar Sesion")
             if error != nil {
-                print("**************************")
-                print("Se presento el siguiente error: \(error)")
-                print("**************************")
-                Auth.auth().createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, completion: {
-                    (user, error) in
-                    print("Intentando crear un usuario")
-                    if error != nil {
-                        print("Se presento el siguiente error al crear el usuario: \(error)")
-                    }else {
-                        print("el usuario fue creado exitosamente")
-                        self.performSegue(withIdentifier: "iniciarsesionsegue", sender: nil)
-                    }
-                })
+                self.showUserNotFoundAlert()
             }else{
-                print("**************************")
-                print("Inicio de sesion exitoso")
-                print("*************************")
                 self.performSegue(withIdentifier: "iniciarsesionsegue", sender: nil)
             }
         }
     }
+    
+    func showUserNotFoundAlert() {
+        let alert = UIAlertController(title: "Error", message: "Usuario no encontrado. ¿Desea crear un nuevo usuario?", preferredStyle: .alert)
+
+        let createButton = UIAlertAction(title: "Crear", style: .default) { (action) in
+            self.performSegue(withIdentifier: "crearUsuarioSegue", sender: nil)
+        }
+
+        let cancelButton = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+
+        alert.addAction(createButton)
+        alert.addAction(cancelButton)
+
+        present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func InciarSesionGoogleTapped(_ sender: Any) {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
        let config = GIDConfiguration(clientID: clientID)
@@ -67,18 +67,16 @@ class iniciarSesionViewController: UIViewController{
                                                         accessToken: user.accessToken.tokenString)
        Auth.auth().signIn(with: credential) { result, error in
            if let error = error {
-               print("************************************")
                print("Error al iniciar sesión con Google: \(error.localizedDescription)")
-               print("************************************")
            } else {
-               print("************************************")
                print("Inicio de sesión exitoso con Google")
-               print("************************************")
            }
        }
            
        }
     }
+    
+
     
 }
 
