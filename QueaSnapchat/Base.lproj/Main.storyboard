@@ -109,12 +109,24 @@
         <!--Snaps View Controller-->
         <scene sceneID="ncy-A8-fpH">
             <objects>
-                <viewController id="t0g-Jo-obW" customClass="SnapsViewController" customModule="QueaSnapchat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="t0g-Jo-obW" customClass="SnapsViewController" customModule="QueaSnapchat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UnN-W6-Swe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xMZ-6N-RtN">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="MR8-rc-fJq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MR8-rc-fJq" firstAttribute="bottom" secondItem="xMZ-6N-RtN" secondAttribute="bottom" id="Ftn-uO-6Ri"/>
+                            <constraint firstItem="xMZ-6N-RtN" firstAttribute="top" secondItem="MR8-rc-fJq" secondAttribute="top" id="Zlm-ZD-6Cr"/>
+                            <constraint firstItem="MR8-rc-fJq" firstAttribute="trailing" secondItem="xMZ-6N-RtN" secondAttribute="trailing" id="bnE-iD-brh"/>
+                            <constraint firstItem="xMZ-6N-RtN" firstAttribute="leading" secondItem="MR8-rc-fJq" secondAttribute="leading" id="znH-ro-1RE"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tmy-bc-MW5">
                         <barButtonItem key="leftBarButtonItem" title="Cerrar Sesion" id="QF7-Ra-S59">
@@ -129,10 +141,66 @@
                         </barButtonItem>
                     </navigationItem>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="tablaSnaps" destination="xMZ-6N-RtN" id="Rue-kR-qf0"/>
+                        <segue destination="qS1-F6-Ki1" kind="show" identifier="versnapsegue" id="Deg-4W-Enx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Em0-H3-gj5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1760.8695652173915" y="81.696428571428569"/>
+        </scene>
+        <!--Ver Snap View Controller-->
+        <scene sceneID="NFx-ss-ORs">
+            <objects>
+                <viewController id="qS1-F6-Ki1" customClass="VerSnapViewController" customModule="QueaSnapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dsJ-qq-fgX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mensaje: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqf-7d-TU0">
+                                <rect key="frame" x="20" y="108" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imagen Enviada: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVD-nO-l90">
+                                <rect key="frame" x="25" y="162" width="364" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QoZ-Cw-Qeh">
+                                <rect key="frame" x="30" y="203" width="354" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="vv8-pN-tND"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fec-SG-fEj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QoZ-Cw-Qeh" firstAttribute="leading" secondItem="fec-SG-fEj" secondAttribute="leading" constant="30" id="8Ut-U8-5bX"/>
+                            <constraint firstItem="fec-SG-fEj" firstAttribute="trailing" secondItem="jqf-7d-TU0" secondAttribute="trailing" constant="20" id="Dot-PZ-mH5"/>
+                            <constraint firstItem="zVD-nO-l90" firstAttribute="leading" secondItem="fec-SG-fEj" secondAttribute="leading" constant="25" id="NTZ-76-cR3"/>
+                            <constraint firstItem="zVD-nO-l90" firstAttribute="top" secondItem="jqf-7d-TU0" secondAttribute="bottom" constant="30" id="XDm-df-RFZ"/>
+                            <constraint firstItem="fec-SG-fEj" firstAttribute="trailing" secondItem="QoZ-Cw-Qeh" secondAttribute="trailing" constant="30" id="cd4-X6-Ba8"/>
+                            <constraint firstItem="zVD-nO-l90" firstAttribute="centerX" secondItem="QoZ-Cw-Qeh" secondAttribute="centerX" id="jdZ-qs-i66"/>
+                            <constraint firstItem="jqf-7d-TU0" firstAttribute="leading" secondItem="fec-SG-fEj" secondAttribute="leading" constant="20" id="mwr-S4-STG"/>
+                            <constraint firstItem="jqf-7d-TU0" firstAttribute="top" secondItem="fec-SG-fEj" secondAttribute="top" constant="20" id="nxr-H5-fDe"/>
+                            <constraint firstItem="QoZ-Cw-Qeh" firstAttribute="top" secondItem="zVD-nO-l90" secondAttribute="bottom" constant="20" id="pey-kS-S5i"/>
+                            <constraint firstItem="fec-SG-fEj" firstAttribute="trailing" secondItem="zVD-nO-l90" secondAttribute="trailing" constant="25" id="xJd-kq-Fh2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cLi-dn-AHP"/>
+                    <connections>
+                        <outlet property="imageView" destination="QoZ-Cw-Qeh" id="nw0-Ma-eKg"/>
+                        <outlet property="lblMensaje" destination="jqf-7d-TU0" id="DXg-4n-Ji8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WFp-d8-qGc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1758" y="826"/>
         </scene>
         <!--Enviar Mensaje-->
         <scene sceneID="toP-V7-Qmo">
@@ -182,11 +250,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Enviar Mensaje" id="37n-bi-4kM">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="I8l-DH-Nnn">
-                            <connections>
-                                <action selector="camaraTapped:" destination="aMU-gB-Vcv" id="WL8-fl-GKc"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="I8l-DH-Nnn">
+                                <connections>
+                                    <action selector="camaraTapped:" destination="aMU-gB-Vcv" id="WL8-fl-GKc"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="NYZ-Tg-zJr">
+                                <connections>
+                                    <action selector="mediaTapped:" destination="aMU-gB-Vcv" id="jo0-8z-gpU"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="descripcionTextField" destination="slc-oJ-hlG" id="snn-Dp-ny6"/>
@@ -334,7 +409,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UQk-85-4p3"/>
+        <segue reference="v2g-ey-6q9"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="7611770-2" width="40" height="40"/>

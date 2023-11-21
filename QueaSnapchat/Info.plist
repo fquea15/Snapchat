@@ -6,8 +6,8 @@
 	<string>Test Photos Gallery access</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Test acces gallery</string>
-    <key>NSCameraUsageDescription</key>
-    <string>We need access to your camera to take photos</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need access to your camera to take photos</string>
 	<key>GIDClientID</key>
 	<string>388434400214-hvf31kogptbaii90d3j6fhln89e04cbt.apps.googleusercontent.com</string>
 	<key>CFBundleURLTypes</key>
